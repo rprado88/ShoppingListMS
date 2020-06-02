@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ShoppingList.Contracts;
 using ShoppingList.Contracts.Interfaces;
@@ -10,11 +11,13 @@ namespace ShoppingList.BusinessLogic
 {
     public class ShoppingListBusiness : IShoppingList
     {
+        private IConfiguration _configuration;
         private readonly ILogger<ShoppingListBusiness> _logger;
         private readonly IShoppingListDataAccess _shoppingListDataAccess;
 
-        public ShoppingListBusiness(ILogger<ShoppingListBusiness> logger, IShoppingListDataAccess shoppingListDataAccess)
+        public ShoppingListBusiness(IConfiguration configuration, ILogger<ShoppingListBusiness> logger, IShoppingListDataAccess shoppingListDataAccess)
         {
+            _configuration = configuration;
             _logger = logger;
             _shoppingListDataAccess = shoppingListDataAccess;
         }

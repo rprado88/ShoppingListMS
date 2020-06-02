@@ -1,13 +1,23 @@
 ﻿<Properties StartupConfiguration="{9EC481D1-4A20-43BD-BFF7-C6C03A13F966}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingList/BusinessLogic/ShoppingListBusiness.cs">
+    <Files>
+      <File FileName="ShoppingListMS/Controllers/ShoppingController.cs" Line="25" Column="1" />
+      <File FileName="ShoppingList/BusinessLogic/ShoppingListBusiness.cs" Line="19" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ShoppingListMS" expanded="True" selected="True">
-            <Node name="docker-compose" expanded="True" />
-            <Node name="ShoppingList" expanded="True" />
-            <Node name="ShoppingList.Tests" expanded="True" />
-            <Node name="ShoppingListMS.Api" expanded="True" />
+          <Node name="ShoppingListMS" expanded="True">
+            <Node name="ShoppingList" expanded="True">
+              <Node name="BusinessLogic" expanded="True">
+                <Node name="ShoppingListBusiness.cs" selected="True" />
+              </Node>
+              <Node name="DataAccess" expanded="True" />
+            </Node>
+            <Node name="ShoppingListMS.Api" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
