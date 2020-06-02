@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ShoppingList;
 using ShoppingList.BusinessLogic;
@@ -16,11 +17,13 @@ namespace ShoppingListMS.Api.Controllers
     [Route("api/[controller]")]
     public class ShoppingController : Controller
     {
+        private IConfiguration _configuration;
         private readonly ILogger<ShoppingController> _logger;
         private readonly IShoppingList _shoppingList;
 
-        public ShoppingController(ILogger<ShoppingController> logger, IShoppingList shoppingList)
+        public ShoppingController(IConfiguration configuration, ILogger<ShoppingController> logger, IShoppingList shoppingList)
         {
+            _configuration = configuration;
             _logger = logger;
             _shoppingList = shoppingList;
         }

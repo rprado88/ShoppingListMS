@@ -5,25 +5,24 @@ services:
     image: shoppinglistms:dev
     container_name: ShoppingListMS.Api
     build:
-      target: base
+      target: runtime
       labels:
         com.microsoft.created-by: "visual-studio"
         com.microsoft.visual-studio.project-name: "ShoppingListMS.Api"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
-      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_shoppinglistms.api$
     volumes:
-      - /Users/rodrigoprado/Projects/ShoppingListMS/ShoppingListMS:/app
-      - /Users/rodrigoprado/Projects/ShoppingListMS:/src
+      - /Users/rodrigoprado/Projects/ShoppingListMS/ShoppingListMS/ShoppingListMS:/app
+      - /Users/rodrigoprado/Projects/ShoppingListMS/ShoppingListMS:/src
       - /Users/rodrigoprado/vsdbg/vs2017u5:/remote_debugger:rw
-      - /Users/rodrigoprado/.nuget/packages/:/root/.nuget/packages:ro
-      - /usr/local/share/dotnet/sdk/NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+#$nuget_volume_mapping_shoppinglistms.api$
 
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  \"/app/bin/Debug/netcoreapp3.1/ShoppingListMS.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_shoppinglistms.api$ \"/app/bin/Debug/netcoreapp3.1/ShoppingListMS.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

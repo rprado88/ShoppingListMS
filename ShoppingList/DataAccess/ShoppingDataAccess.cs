@@ -4,15 +4,20 @@ using MySql;
 using Dapper;
 using ShoppingList.Contracts;
 using ShoppingList.Contracts.Interfaces;
+using Microsoft.Extensions.Configuration;
 
 namespace ShoppingList.DataAccess
 {
     public class ShoppingDataAccess : IShoppingListDataAccess
     {
-        private readonly string ConnectionString = "SERVER=localhost; DATABASE=ShoppingList; UID=root; PASSWORD=sa123";
+        //private readonly string ConnectionString = "SERVER=localhost; DATABASE=ShoppingList; UID=root; PASSWORD=sa123";
+        private readonly IConfiguration _configuration;
+        private readonly string ConnectionString;
 
-        public ShoppingDataAccess()
+        public ShoppingDataAccess(IConfiguration configuration)
         {
+            _configuration = configuration;
+            ConnectionString = _configuration["ConnectionString"].ToString();
         }
 
         public void CreateListItem(Shopping shopping)
