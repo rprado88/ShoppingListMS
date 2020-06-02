@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{9EC481D1-4A20-43BD-BFF7-C6C03A13F966}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ShoppingListMS" expanded="True" selected="True">
+            <Node name="docker-compose" expanded="True" />
+            <Node name="ShoppingList" expanded="True" />
+            <Node name="ShoppingList.Tests" expanded="True" />
+            <Node name="ShoppingListMS.Api" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ShoppingListMS.Api PreferredExecutionTarget="/Applications/Firefox.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
